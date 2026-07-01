@@ -1,0 +1,102 @@
+:root{
+  --bg: #0a0a12;
+  --panel: #10101c;
+  --pink: #ff2079;
+  --blue: #00e5ff;
+  --purple: #8338ec;
+  --text: #d8d8f0;
+  --dim: #7a7a9a;
+}
+
+*{box-sizing:border-box; margin:0; padding:0}
+
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-family:'VT323', monospace;
+  font-size:20px;
+  min-height:100vh;
+}
+
+h1,h2,.dock-logo,.terminal-title,.btn-run,.mission-id,.block-title{font-family:'Press Start 2P', monospace}
+
+.crt{
+  position:fixed; inset:0; pointer-events:none; z-index:50;
+  background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.03) 0px, transparent 2px, transparent 4px);
+}
+.crt::after{
+  content:""; position:absolute; inset:0;
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.5) 100%);
+}
+
+/* HUD layout: fixed icon dock + single scrolling terminal column — not a hero/cards page */
+.hud{display:flex; min-height:100vh}
+
+.dock{
+  width:64px; background:var(--panel); border-right:2px solid var(--purple);
+  display:flex; flex-direction:column; align-items:center; gap:28px; padding:24px 0;
+  position:sticky; top:0; height:100vh;
+}
+.dock-logo{
+  width:36px; height:36px; background:var(--pink); color:#000;
+  display:flex; align-items:center; justify-content:center; font-size:14px;
+}
+.dock-icon{color:var(--blue); text-decoration:none; font-size:22px}
+.dock-icon:hover{color:var(--pink)}
+
+.main{flex:1; padding:24px 32px 60px; max-width:900px}
+
+.ticker{overflow:hidden; border:2px solid var(--pink); margin-bottom:24px; background:var(--panel)}
+.ticker-track{
+  white-space:nowrap; display:inline-block; padding:8px 0; color:var(--pink); font-size:16px;
+  animation: scroll 14s linear infinite;
+}
+@keyframes scroll{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+
+.terminal-block{border:2px solid var(--blue); background:var(--panel); margin-bottom:32px}
+.terminal-header{display:flex; align-items:center; gap:8px; padding:10px 14px; border-bottom:2px solid var(--blue)}
+.dot{width:10px; height:10px; display:inline-block}
+.dot.red{background:#ff5f56}
+.dot.yellow{background:#ffbd2e}
+.dot.green{background:#27c93f}
+.terminal-title{margin-left:12px; font-size:11px; color:var(--dim)}
+
+.terminal-body{padding:24px}
+.line{margin-bottom:10px; font-size:20px}
+.prompt{color:var(--pink); margin-right:6px}
+.dim{color:var(--dim)}
+
+.big-title{font-size:38px; line-height:1.4; margin:24px 0; text-shadow:3px 3px 0 var(--purple)}
+.accent{color:var(--blue)}
+
+.glitch{position:relative; color:var(--blue)}
+
+.btn-run{
+  margin-top:16px; background:transparent; border:2px solid var(--pink); color:var(--pink);
+  padding:14px 20px; font-size:13px; cursor:pointer;
+}
+.btn-run:hover{background:var(--pink); color:#000}
+
+.grid-block{margin-bottom:40px}
+.block-title{font-size:14px; color:var(--purple); margin-bottom:20px}
+
+.data-grid{display:flex; flex-direction:column; gap:14px}
+.data-row{display:grid; grid-template-columns:180px 1fr 50px; align-items:center; gap:12px; font-size:18px}
+.bar{background:var(--panel); border:1px solid var(--blue); height:14px; display:block}
+.bar i{display:block; height:100%; background:linear-gradient(90deg, var(--blue), var(--pink))}
+.pct{color:var(--dim); text-align:right}
+
+.mission-list{display:flex; flex-direction:column; gap:2px}
+.mission{display:flex; gap:20px; padding:16px; border:1px solid var(--purple); background:var(--panel); margin-bottom:8px}
+.mission-id{color:var(--pink); font-size:16px}
+.mission h3{font-size:16px; color:var(--blue); margin-bottom:6px; font-family:'Press Start 2P'}
+.mission p{color:var(--text); font-size:19px}
+
+.terminal-footer{border-top:2px solid var(--purple); padding-top:20px}
+
+@media (max-width:700px){
+  .dock{width:48px}
+  .main{padding:16px}
+  .big-title{font-size:26px}
+  .data-row{grid-template-columns:120px 1fr 40px; font-size:15px}
+}

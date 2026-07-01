@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel Squash — Pixel Quest Guild</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="page.css">
+</head>
+<body class="game-page-body">
+
+<div class="game-page">
+  <a href="../../index.html#games" class="back-link">← Назад в гильдию</a>
+
+  <h1 class="game-page-title">Pixel Squash</h1>
+  <p class="lore-text game-page-desc">Тенис от стены: отбивай магический шар ракеткой, не дай ему упасть за спину.</p>
+
+  <div class="pixel-frame arena-frame">
+    <div class="pixel-frame-inner arena-inner">
+
+      <div class="arena-hud">
+        <span class="hud-item">Очки: <b id="score">0</b></span>
+        <span class="hud-item" id="lives">❤❤❤</span>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="game" width="160" height="200"></canvas>
+        <div class="arena-overlay" id="overlay">
+          <p class="overlay-title">PIXEL SQUASH</p>
+          <p class="overlay-hint">← → или мышь — двигать ракетку<br>ПРОБЕЛ — подать мяч</p>
+          <button class="btn-torch" id="startBtn">Начать бой</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <p class="game-credit">Это заготовка первой игры гильдии. Хочешь добавить свою? Смотри <code>GAMES.md</code> в корне шаблона.</p>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

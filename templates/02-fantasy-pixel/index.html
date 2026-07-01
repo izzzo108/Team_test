@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIXEL QUEST — Fantasy RPG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="book">
+
+  <!-- Left page: quest log / navigation -->
+  <aside class="page page-left">
+    <div class="seal">⚔</div>
+    <h1 class="title">PIXEL<br>QUEST</h1>
+    <p class="subtitle">Дневник искателя</p>
+
+    <nav class="quest-log">
+      <a href="#ch1" class="quest active"><span class="quest-num">I.</span> Начало пути</a>
+      <a href="#ch2" class="quest"><span class="quest-num">II.</span> Инвентарь героя</a>
+      <a href="#ch3" class="quest"><span class="quest-num">III.</span> Легенда мира</a>
+      <a href="#ch4" class="quest"><span class="quest-num">IV.</span> Гильдия</a>
+      <a href="#games" class="quest"><span class="quest-num">V.</span> Игры</a>
+    </nav>
+
+    <button class="btn-torch">🔥 Начать поход</button>
+  </aside>
+
+  <!-- Right page: content -->
+  <section class="page page-right">
+
+    <article id="ch1" class="chapter">
+      <p class="drop-cap-line">Глава I</p>
+      <h2>Начало пути</h2>
+      <div class="pixel-frame hero-frame">
+        <div class="pixel-frame-inner hero-scene">
+          <div class="sprite sprite-hero"></div>
+          <div class="sprite sprite-tree"></div>
+        </div>
+      </div>
+      <p class="lore-text">Давным-давно в пиксельном королевстве родился герой... Здесь будет вступление в игру: сюжет, цель квеста и первая кнопка "Играть".</p>
+    </article>
+
+    <article id="ch2" class="chapter">
+      <h2>Инвентарь героя</h2>
+      <div class="inventory">
+        <div class="pixel-frame slot"><div class="pixel-frame-inner"><span class="item">🗡️</span><p>Меч</p></div></div>
+        <div class="pixel-frame slot"><div class="pixel-frame-inner"><span class="item">🛡️</span><p>Щит</p></div></div>
+        <div class="pixel-frame slot"><div class="pixel-frame-inner"><span class="item">🧪</span><p>Зелье</p></div></div>
+        <div class="pixel-frame slot"><div class="pixel-frame-inner"><span class="item">🗝️</span><p>Ключ</p></div></div>
+      </div>
+    </article>
+
+    <article id="ch3" class="chapter">
+      <h2>Легенда мира</h2>
+      <div class="pixel-frame">
+        <div class="pixel-frame-inner">
+          <p class="lore-text">Этот раздел — заготовка под лор игры: мир, фракции, карта королевства. Замени текст на историю своей игры, когда она будет готова.</p>
+        </div>
+      </div>
+    </article>
+
+    <article id="ch4" class="chapter">
+      <h2>Гильдия</h2>
+      <div class="pixel-frame">
+        <div class="pixel-frame-inner guild">
+          <p>Присоединяйся к сообществу игроков.</p>
+          <div class="guild-links">
+            <a href="#">Discord</a>
+            <a href="#">Telegram</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article id="games" class="chapter">
+      <p class="drop-cap-line">Глава V</p>
+      <h2>Игры гильдии</h2>
+
+      <div class="pixel-frame board-frame">
+        <div class="pixel-frame-inner board">
+          <p class="board-title">📜 Доска объявлений</p>
+          <p class="lore-text">Приветствую, странник! Если ты читаешь это — значит, ты второй мастер этой гильдии, и мы делаем этот сайт вместе.</p>
+          <p class="lore-text">Каждая игра здесь живёт в своей папке: <code>games/&lt;название-игры&gt;/</code> — со своим <code>index.html</code> и <code>game.js</code>. <b>Создай свою игру в пиксель-арт стиле и добавь её на эту доску</b> — своя папка + карточка в списке ниже. Как оформить — смотри <code>GAMES.md</code> в корне шаблона.</p>
+        </div>
+      </div>
+
+      <div class="games-grid">
+        <a href="games/pixel-squash/index.html" class="pixel-frame game-card">
+          <div class="pixel-frame-inner">
+            <div class="game-card-icon">🎾</div>
+            <h3>Pixel Squash</h3>
+            <p>Тенис от стены. Отбивай магический шар ракеткой, не пропусти его мимо.</p>
+            <span class="play-tag">▶ Играть</span>
+          </div>
+        </a>
+
+        <div class="pixel-frame game-card empty">
+          <div class="pixel-frame-inner">
+            <div class="game-card-icon">➕</div>
+            <h3>Свободный слот</h3>
+            <p>Здесь появится следующая игра гильдии. Создай свою — и добавь сюда.</p>
+          </div>
+        </div>
+
+        <div class="pixel-frame game-card empty">
+          <div class="pixel-frame-inner">
+            <div class="game-card-icon">➕</div>
+            <h3>Свободный слот</h3>
+            <p>Ещё один квест ждёт своего мастера.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <footer class="page-footer">
+      <p>© 2026 Pixel Quest Guild — свиток создан для тестового сайта</p>
+    </footer>
+
+  </section>
+</div>
+
+</body>
+</html>

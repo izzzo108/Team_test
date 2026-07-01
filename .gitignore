@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+*.swp
+*.swo
+
+# Node (если позже добавите сборку/тесты)
+node_modules/
+dist/
+.env
+.env.local
+
+# Logs
+*.log

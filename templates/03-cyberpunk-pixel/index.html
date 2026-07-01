@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEON.EXE — Cyberpunk Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="crt"></div>
+
+<div class="hud">
+
+  <!-- Left dock: vertical icon nav, not a normal navbar -->
+  <nav class="dock">
+    <div class="dock-logo">N</div>
+    <a href="#feed" class="dock-icon" title="Лента">▮</a>
+    <a href="#stats" class="dock-icon" title="Статистика">▦</a>
+    <a href="#missions" class="dock-icon" title="Миссии">◈</a>
+    <a href="#access" class="dock-icon" title="Доступ">⌁</a>
+  </nav>
+
+  <div class="main">
+
+    <div class="ticker">
+      <div class="ticker-track">
+        СИСТЕМА АКТИВНА · ЗАГРУЗКА ИГРОВОГО МОДУЛЯ 42% · NEON.EXE ONLINE · СИСТЕМА АКТИВНА · ЗАГРУЗКА ИГРОВОГО МОДУЛЯ 42% · NEON.EXE ONLINE ·
+      </div>
+    </div>
+
+    <section id="feed" class="terminal-block">
+      <div class="terminal-header">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="terminal-title">root@neon:~/game</span>
+      </div>
+      <div class="terminal-body">
+        <p class="line"><span class="prompt">$</span> init_project <span class="glitch" data-text="NEON.EXE">NEON.EXE</span></p>
+        <p class="line dim">> Загрузка пиксельного рендера... OK</p>
+        <p class="line dim">> Подключение игрового движка... ожидание</p>
+        <h1 class="big-title">ВОЙДИ<br>В <span class="accent">СЕТЬ</span></h1>
+        <p class="line">Заготовка сайта под браузерную пиксельную игру в неоновом киберпанк-стиле. Ниже — блоки, которые позже станут игровым интерфейсом.</p>
+        <button class="btn-run">[ RUN GAME.EXE ]</button>
+      </div>
+    </section>
+
+    <section id="stats" class="grid-block">
+      <h2 class="block-title">// СТАТУС МОДУЛЕЙ</h2>
+      <div class="data-grid">
+        <div class="data-row"><span>Рендер спрайтов</span><span class="bar"><i style="width:90%"></i></span><span class="pct">90%</span></div>
+        <div class="data-row"><span>Игровая логика</span><span class="bar"><i style="width:35%"></i></span><span class="pct">35%</span></div>
+        <div class="data-row"><span>Звук / музыка</span><span class="bar"><i style="width:10%"></i></span><span class="pct">10%</span></div>
+        <div class="data-row"><span>UI сайта</span><span class="bar"><i style="width:100%"></i></span><span class="pct">100%</span></div>
+      </div>
+    </section>
+
+    <section id="missions" class="grid-block">
+      <h2 class="block-title">// ДОСТУПНЫЕ МОДУЛИ</h2>
+      <div class="mission-list">
+        <div class="mission"><span class="mission-id">01</span><div><h3>Пиксельный движок</h3><p>Canvas/WebGL рендер спрайтов и тайлов.</p></div></div>
+        <div class="mission"><span class="mission-id">02</span><div><h3>Система уровней</h3><p>Загрузка карт и переходы между локациями.</p></div></div>
+        <div class="mission"><span class="mission-id">03</span><div><h3>Онлайн-рейтинг</h3><p>Сохранение и вывод рекордов игроков.</p></div></div>
+      </div>
+    </section>
+
+    <footer id="access" class="terminal-footer">
+      <p class="line dim">> connection status: <span class="accent">stable</span></p>
+      <p class="line dim">© 2026 NEON.EXE — end of file</p>
+    </footer>
+
+  </div>
+</div>
+
+</body>
+</html>

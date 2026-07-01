@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Team Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🕹️ Pixel Team Game</h1>
+    <p class="subtitle">Учебный проект команды — сайт с пиксель-артовой мини-игрой</p>
+  </header>
+
+  <main>
+    <div class="hud">
+      <span>Очки: <strong id="score">0</strong></span>
+      <span class="hint">Управление: стрелки / WASD</span>
+    </div>
+    <canvas id="game" width="320" height="240"></canvas>
+  </main>
+
+  <footer>
+    <p>Сделано в команде · <a href="README.md">README проекта</a></p>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
