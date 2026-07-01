@@ -1,0 +1,64 @@
+:root{
+  --bg:#fdf6f0;
+  --ink:#3a3038;
+  --mint:#b7e4c7;
+  --pink:#f6c6d0;
+  --lilac:#d8c9f2;
+  --card:#ffffff;
+  --gray:#8a7f87;
+  --c:6px;
+}
+
+*{box-sizing:border-box; margin:0; padding:0}
+
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'VT323', monospace;
+  font-size:20px;
+}
+
+h1,h2,h3,.logo,.btn,.eyebrow,.tag{font-family:'Press Start 2P', monospace}
+
+.container{max-width:960px; margin:0 auto; padding:0 24px}
+
+.header{padding:20px 0}
+.header-inner{display:flex; align-items:center; justify-content:space-between}
+.logo{font-size:13px; color:var(--ink)}
+.nav-link{color:var(--ink); text-decoration:none; font-size:20px; background:var(--pink); padding:8px 16px}
+
+.hero{padding:80px 0; text-align:center}
+.eyebrow{font-size:11px; color:var(--gray); letter-spacing:2px; margin-bottom:20px}
+.hero h1{font-size:32px; line-height:1.5; margin-bottom:24px; color:var(--ink)}
+.desc{max-width:520px; margin:0 auto 36px; font-size:22px; color:#5c525a}
+
+.btn{
+  display:inline-block; font-size:13px; text-decoration:none; color:var(--ink);
+  background:var(--mint); padding:16px 28px;
+  clip-path: polygon(0 var(--c), var(--c) var(--c), var(--c) 0, calc(100% - var(--c)) 0, calc(100% - var(--c)) var(--c), 100% var(--c), 100% calc(100% - var(--c)), calc(100% - var(--c)) calc(100% - var(--c)), calc(100% - var(--c)) 100%, var(--c) 100%, var(--c) calc(100% - var(--c)), 0 calc(100% - var(--c)));
+}
+.btn:hover{background:var(--lilac)}
+
+.games{padding:60px 0 100px}
+.section-title{font-size:20px; margin-bottom:32px; text-align:center}
+
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.card{
+  background:var(--card); text-decoration:none; color:var(--ink);
+  padding:28px 22px; display:flex; flex-direction:column; gap:10px; min-height:170px;
+  clip-path: polygon(0 var(--c), var(--c) var(--c), var(--c) 0, calc(100% - var(--c)) 0, calc(100% - var(--c)) var(--c), 100% var(--c), 100% calc(100% - var(--c)), calc(100% - var(--c)) calc(100% - var(--c)), calc(100% - var(--c)) 100%, var(--c) 100%, var(--c) calc(100% - var(--c)), 0 calc(100% - var(--c)));
+  box-shadow: 0 4px 0 rgba(0,0,0,0.05);
+  transition: background-color 0.15s;
+}
+.card.mint:hover{background:var(--mint)}
+.card h3{font-size:14px}
+.card p{color:#5c525a; font-size:19px; flex:1}
+.tag{font-size:11px; color:var(--ink)}
+.card.empty{background:#f1e9e2; color:var(--gray); border:2px dashed #d9cfc6}
+.card.empty h3{color:var(--gray)}
+
+.footer{padding:24px 0; color:var(--gray); font-size:16px; text-align:center}
+
+@media (max-width:700px){
+  .grid{grid-template-columns:1fr}
+}

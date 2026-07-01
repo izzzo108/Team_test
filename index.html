@@ -3,27 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pixel Team Game</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Pixel Team Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css" />
 </head>
 <body>
-  <header class="topbar">
-    <h1>🕹️ Pixel Team Game</h1>
-    <p class="subtitle">Учебный проект команды — сайт с пиксель-артовой мини-игрой</p>
+  <header class="site-header">
+    <h1>🕹️ Pixel Team Games</h1>
+    <p class="subtitle">
+      Учебный проект команды — коллекция маленьких пиксель-артовых игр.
+      Каждую делает кто-то из команды в своей ветке — см.
+      <a href="GAMES.md">GAMES.md</a> и <a href="README.md">README</a>.
+    </p>
   </header>
 
   <main>
-    <div class="hud">
-      <span>Очки: <strong id="score">0</strong></span>
-      <span class="hint">Управление: стрелки / WASD</span>
-    </div>
-    <canvas id="game" width="320" height="240"></canvas>
+    <div class="games-grid" id="games-list"></div>
   </main>
 
   <footer>
-    <p>Сделано в команде · <a href="README.md">README проекта</a></p>
+    <p>Сделано в команде · <a href="README.md">README проекта</a> · <a href="ONBOARDING.md">Онбординг</a></p>
   </footer>
 
-  <script src="game.js"></script>
+  <script src="games.js"></script>
 </body>
 </html>

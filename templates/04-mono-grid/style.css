@@ -1,0 +1,56 @@
+:root{
+  --bg:#ffffff;
+  --ink:#0a0a0a;
+  --line:#0a0a0a;
+  --gray:#6b6b6b;
+}
+
+*{box-sizing:border-box; margin:0; padding:0}
+
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'VT323', monospace;
+  font-size:20px;
+}
+
+h1,h2,h3,.logo,.btn,.eyebrow,.tag{font-family:'Press Start 2P', monospace}
+
+.container{max-width:960px; margin:0 auto; padding:0 24px}
+
+.header{border-bottom:2px solid var(--line)}
+.header-inner{height:64px; display:flex; align-items:center; justify-content:space-between}
+.logo{font-size:13px}
+.nav-link{color:var(--ink); text-decoration:none; font-size:20px; border-bottom:2px solid var(--line)}
+
+.hero{padding:100px 0 80px; text-align:center; border-bottom:2px solid var(--line)}
+.eyebrow{font-size:11px; color:var(--gray); letter-spacing:2px; margin-bottom:20px}
+.hero h1{font-size:32px; line-height:1.5; margin-bottom:24px}
+.desc{max-width:520px; margin:0 auto 36px; font-size:22px; color:#333}
+
+.btn{
+  display:inline-block; font-size:13px; text-decoration:none; color:var(--bg);
+  background:var(--ink); padding:16px 28px; border:2px solid var(--ink);
+}
+.btn:hover{background:var(--bg); color:var(--ink)}
+
+.games{padding:80px 0}
+.section-title{font-size:20px; margin-bottom:40px}
+
+.grid{display:grid; grid-template-columns:repeat(3,1fr); border-left:2px solid var(--line); border-top:2px solid var(--line)}
+.card{
+  border-right:2px solid var(--line); border-bottom:2px solid var(--line);
+  padding:32px 24px; text-decoration:none; color:var(--ink);
+  display:flex; flex-direction:column; gap:12px; min-height:180px;
+}
+.card h3{font-size:15px}
+.card p{color:var(--gray); font-size:19px; flex:1}
+.tag{font-size:11px}
+.card.empty{color:var(--gray)}
+.card.empty h3{color:var(--gray)}
+
+.footer{border-top:2px solid var(--line); padding:24px 0; color:var(--gray); font-size:16px}
+
+@media (max-width:700px){
+  .grid{grid-template-columns:1fr}
+}

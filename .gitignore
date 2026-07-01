@@ -14,3 +14,6 @@ dist/
 
 # Logs
 *.log
+
+# Claude Code runtime state (не часть проекта)
+.claude/scheduled_tasks.lock

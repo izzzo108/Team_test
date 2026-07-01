@@ -1,0 +1,74 @@
+/* Общий каркас страницы игры — расположение, а не тема.
+   Цвета берутся из CSS-переменных (задаются в /theme.css), с запасными
+   значениями на случай, если игра открыта без него. */
+
+:root {
+  --game-bg: #101018;
+  --game-fg: #f0f0f5;
+  --game-muted: #9a9ab0;
+  --game-border: #4a4a6a;
+  --game-panel: #1c1c28;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.game-page {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: var(--game-bg);
+  color: var(--game-fg);
+  font-family: "Courier New", monospace;
+  padding: 2rem 1rem;
+}
+
+.game-page .back-link {
+  align-self: flex-start;
+  color: var(--game-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.game-page .back-link:hover {
+  color: var(--game-fg);
+}
+
+.game-page .game-header {
+  text-align: center;
+}
+
+.game-page .game-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+}
+
+.game-page .game-header .subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--game-muted);
+  font-size: 0.9rem;
+}
+
+.game-page .hud {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 480px;
+  font-size: 0.9rem;
+}
+
+.game-page .hint {
+  color: var(--game-muted);
+}
+
+.game-page canvas {
+  background: var(--game-panel);
+  border: 4px solid var(--game-border);
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}

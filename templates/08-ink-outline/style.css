@@ -1,0 +1,60 @@
+:root{
+  --bg:#fbfbf9;
+  --ink:#111111;
+  --gray:#8a8a8a;
+  --c:8px;
+}
+
+*{box-sizing:border-box; margin:0; padding:0}
+
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'VT323', monospace;
+  font-size:20px;
+}
+
+h1,h2,h3,.logo,.btn,.eyebrow,.tag{font-family:'Press Start 2P', monospace}
+
+.container{max-width:960px; margin:0 auto; padding:0 24px}
+
+.header{padding:24px 0}
+.header-inner{display:flex; align-items:center; justify-content:space-between}
+.logo{font-size:13px}
+.nav-link{color:var(--ink); text-decoration:none; font-size:20px}
+
+.hero{padding:100px 0; text-align:center}
+.eyebrow{font-size:11px; color:var(--gray); letter-spacing:2px; margin-bottom:24px}
+.hero h1{font-size:32px; line-height:1.5; margin-bottom:24px}
+.desc{max-width:520px; margin:0 auto 40px; font-size:22px; color:#444}
+
+.btn{
+  display:inline-block; font-size:13px; text-decoration:none; color:var(--ink);
+  background:transparent; padding:16px 28px; border:3px solid var(--ink);
+  clip-path: polygon(0 var(--c), var(--c) var(--c), var(--c) 0, calc(100% - var(--c)) 0, calc(100% - var(--c)) var(--c), 100% var(--c), 100% calc(100% - var(--c)), calc(100% - var(--c)) calc(100% - var(--c)), calc(100% - var(--c)) 100%, var(--c) 100%, var(--c) calc(100% - var(--c)), 0 calc(100% - var(--c)));
+}
+.btn:hover{background:var(--ink); color:var(--bg)}
+
+.games{padding:40px 0 100px}
+.section-title{font-size:20px; margin-bottom:40px; text-align:center}
+
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+.card{
+  text-decoration:none; color:var(--ink);
+  padding:28px 22px; display:flex; flex-direction:column; gap:10px; min-height:170px;
+  border:3px solid var(--ink);
+  clip-path: polygon(0 var(--c), var(--c) var(--c), var(--c) 0, calc(100% - var(--c)) 0, calc(100% - var(--c)) var(--c), 100% var(--c), 100% calc(100% - var(--c)), calc(100% - var(--c)) calc(100% - var(--c)), calc(100% - var(--c)) 100%, var(--c) 100%, var(--c) calc(100% - var(--c)), 0 calc(100% - var(--c)));
+}
+.card h3{font-size:14px}
+.card p{color:#444; font-size:19px; flex:1}
+.tag{font-size:11px}
+.card.empty{border-style:dashed; color:var(--gray)}
+.card.empty h3, .card.empty p{color:var(--gray)}
+.card:not(.empty):hover{background:var(--ink); color:var(--bg)}
+.card:not(.empty):hover p, .card:not(.empty):hover .tag{color:var(--bg)}
+
+.footer{padding:24px 0; color:var(--gray); font-size:16px; text-align:center}
+
+@media (max-width:700px){
+  .grid{grid-template-columns:1fr}
+}
