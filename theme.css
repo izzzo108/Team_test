@@ -1,0 +1,101 @@
+/* Тема сайта: цвета, шрифты, разметка лендинга (шапка/меню/карточки).
+   Это единственный файл, который трогают при смене дизайна (см. templates/) —
+   игры внутри /games не зависят от темы напрямую, только от /shared/game.css. */
+
+:root {
+  --game-bg: #101018;
+  --game-fg: #f0f0f5;
+  --game-muted: #9a9ab0;
+  --game-border: #4a4a6a;
+  --game-panel: #1c1c28;
+  --accent: #ffd23f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--game-bg);
+  color: var(--game-fg);
+  font-family: "Courier New", monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem 3rem;
+}
+
+.site-header {
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+}
+
+.site-header .subtitle {
+  margin: 0.35rem 0 0;
+  color: var(--game-muted);
+  max-width: 40rem;
+}
+
+main {
+  width: 100%;
+  max-width: 720px;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.game-card {
+  display: block;
+  background: var(--game-panel);
+  border: 3px solid var(--game-border);
+  color: inherit;
+  text-decoration: none;
+  padding: 1rem;
+  transition: border-color 0.15s ease;
+}
+
+.game-card:hover {
+  border-color: var(--accent);
+}
+
+.game-card .icon {
+  font-size: 1.6rem;
+}
+
+.game-card h3 {
+  margin: 0.4rem 0 0.25rem;
+  font-size: 1rem;
+}
+
+.game-card p {
+  margin: 0;
+  color: var(--game-muted);
+  font-size: 0.85rem;
+}
+
+.game-card .play-tag {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+footer {
+  color: #6a6a80;
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: #8a8aff;
+}

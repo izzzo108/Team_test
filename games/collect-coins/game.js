@@ -1,5 +1,5 @@
 // Мини пиксель-арт игра: собери как можно больше "монеток".
-// Это отправная точка для команды — расширяйте геймплей как захотите.
+// Использует общий движок из /shared (Engine.loop, Engine.Input, Engine.Canvas).
 
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
@@ -19,6 +19,8 @@ const COLORS = {
 const player = { x: Math.floor(COLS / 2), y: Math.floor(ROWS / 2) };
 let coin = randomEmptyTile();
 let score = 0;
+let moveTimer = 0;
+const MOVE_INTERVAL = 0.12; // сек между шагами при зажатой клавише
 
 function randomEmptyTile() {
   let tile;
@@ -46,54 +48,32 @@ function movePlayer(dx, dy) {
   }
 }
 
-const KEY_MOVES = {
-  ArrowUp: [0, -1],
-  ArrowDown: [0, 1],
-  ArrowLeft: [-1, 0],
-  ArrowRight: [1, 0],
-  w: [0, -1],
-  s: [0, 1],
-  a: [-1, 0],
-  d: [1, 0],
-};
-
-window.addEventListener("keydown", (event) => {
-  const move = KEY_MOVES[event.key];
-  if (!move) return;
-  event.preventDefault();
-  movePlayer(move[0], move[1]);
-});
-
-function drawGrid() {
-  ctx.strokeStyle = COLORS.grid;
-  for (let x = 0; x <= COLS; x++) {
-    ctx.beginPath();
-    ctx.moveTo(x * TILE, 0);
-    ctx.lineTo(x * TILE, canvas.height);
-    ctx.stroke();
-  }
-  for (let y = 0; y <= ROWS; y++) {
-    ctx.beginPath();
-    ctx.moveTo(0, y * TILE);
-    ctx.lineTo(canvas.width, y * TILE);
-    ctx.stroke();
-  }
+function readMove() {
+  const { Input } = window.Engine;
+  if (Input.isAnyDown(["ArrowUp", "w"])) return [0, -1];
+  if (Input.isAnyDown(["ArrowDown", "s"])) return [0, 1];
+  if (Input.isAnyDown(["ArrowLeft", "a"])) return [-1, 0];
+  if (Input.isAnyDown(["ArrowRight", "d"])) return [1, 0];
+  return null;
 }
 
-function drawTile(tile, color) {
-  ctx.fillStyle = color;
-  ctx.fillRect(tile.x * TILE + 2, tile.y * TILE + 2, TILE - 4, TILE - 4);
+function update(dt) {
+  moveTimer -= dt;
+  if (moveTimer > 0) return;
+
+  const move = readMove();
+  if (!move) return;
+
+  movePlayer(move[0], move[1]);
+  moveTimer = MOVE_INTERVAL;
 }
 
 function render() {
-  ctx.fillStyle = COLORS.background;
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  drawGrid();
-  drawTile(coin, COLORS.coin);
-  drawTile(player, COLORS.player);
-
-  requestAnimationFrame(render);
+  const { Canvas } = window.Engine;
+  Canvas.clear(ctx, COLORS.background, canvas.width, canvas.height);
+  Canvas.drawGrid(ctx, TILE, COLS, ROWS, COLORS.grid);
+  Canvas.drawTile(ctx, TILE, coin.x, coin.y, COLORS.coin);
+  Canvas.drawTile(ctx, TILE, player.x, player.y, COLORS.player);
 }
 
-render();
+window.Engine.loop({ update, render });
